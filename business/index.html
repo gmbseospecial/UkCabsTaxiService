@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Network - UK Cabs Taxi Service</title>
+    <meta name="description" content="UK Cabs Business Network - connect with our partner businesses in London.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../images/Logo.jpg">
+    <style>
+        .business-section {
+            padding: 5rem 0;
+        }
+        .business-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        .business-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .business-header {
+            background: linear-gradient(135deg, var(--primary-black), var(--dark-gray));
+            padding: 2rem;
+            text-align: center;
+        }
+        .business-logo {
+            width: 100px;
+            height: 100px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 3rem;
+        }
+        .business-header h3 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+        .business-category {
+            color: var(--gold);
+            font-weight: 500;
+        }
+        .business-body {
+            padding: 1.5rem;
+        }
+        .business-body p {
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+        }
+        .business-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .business-contact a {
+            color: var(--primary-black);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .category-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+        .category-tab {
+            padding: 0.75rem 1.5rem;
+            background: white;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        .category-tab:hover, .category-tab.active {
+            background: var(--gold);
+            color: var(--primary-black);
+        }
+        
+        /* Business Card Button Styles */
+        .business-card .btn-secondary {
+            color: var(--primary-black);
+            border-color: var(--gold);
+        }
+        
+        .business-card .btn-secondary:hover,
+        .business-card .btn-secondary:active {
+            background: var(--gold);
+            color: var(--primary-black);
+        }
+        
+        .business-card .btn-secondary:active {
+            transform: translateY(-1px);
+        }
+        
+        /* Hide extra cards initially */
+        .hidden-card {
+            display: none;
+        }
+        
+        @media (min-width: 769px) {
+            /* Desktop: Show first 6 cards */
+            .services-grid .business-card:nth-child(-n+6) {
+                display: block;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            /* Mobile: Show first 5 cards */
+            .services-grid .business-card:nth-child(-n+5) {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo" style="text-decoration: none;">
+                <img src="../images/Logo.jpg" alt="UK Cabs Taxi Service Logo">
+                <div class="logo-text-container">
+                    <div class="logo-text">UK <span>Cabs</span></div>
+                    <div class="logo-subtext">Taxi Service</div>
+                </div>
+            </a>
+                        <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li class="dropdown">
+                    <a href="/about">About Us ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/our-story">Our Story</a></li>
+                        <li><a href="/business">Business Network</a></li>
+                        <li><a href="/our-team">Our Team</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="/services">Services ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/services">All Services</a></li>
+                        <li><a href="/airports">Airport Transfers</a></li>
+                        <li><a href="/executive-travel">Executive Travel</a></li>
+                        <li><a href="/corporate-accounts">Corporate Accounts</a></li>
+                        <li><a href="/local-taxi">Local Taxi</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="/airports">Airports ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/airports">All Airports</a></li>
+                        <li><a href="/heathrow">Heathrow Airport</a></li>
+                        <li><a href="/gatwick">Gatwick Airport</a></li>
+                        <li><a href="/stansted">Stansted Airport</a></li>
+                        <li><a href="/luton">Luton Airport</a></li>
+                        <li><a href="/londoncity">London City Airport</a></li>
+                    </ul>
+                </li>
+                <li><a href="/fleet">Fleet</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>            <div class="nav-cta">
+                <a href="tel:+442071234567" class="phone-link">📞 +44 20 3807 8094</a>
+                <a href="/book" class="btn btn-primary">Book Now</a>
+            </div>
+            <div class="mobile-nav-actions">
+                <a href="tel:+442071234567" class="mobile-call-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                </a>
+                <button class="mobile-menu-btn">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="6" x2="21" y2="6"/>
+                        <line x1="3" y1="12" x2="21" y2="12"/>
+                        <line x1="3" y1="18" x2="21" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero page-hero" style="min-height: 60vh;">
+        <div class="container" style="text-align: center;">
+            <h1 style="color: white; font-size: 3.5rem; margin-bottom: 1rem;">London <span style="color: var(--gold);">Taxi Network</span></h1>
+            <p style="color: var(--light-gray); font-size: 1.3rem;">Explore our extensive network of trusted London taxi partners, from local cab services to executive transport and airport transfers. With 24/7 availability, professional drivers, and competitive fares, we connect you to reliable rides across every corner of the city.</p>
+        </div>
+    </section>
+
+    <section class="business-section why-choose">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our <span>Network Partners</span></h2>
+                <p>Connect with our trusted London taxi services</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="business-card">
+                    <div class="business-header">
+                        <div class="business-logo">🚕</div>
+                        <h3>City Taxi Services</h3>
+                        <div class="business-category">London Taxi Network</div>
+                    </div>
+                    <div class="business-body">
+                        <p>Reliable local taxi service covering Greater London with competitive rates and 24/7 availability.</p>
+                        <div class="business-contact">
+                            <a href="#">📍 Greater London Area</a>
+                            <a href="tel:+442071234504">📞 +44 20 7123 4504</a>
+
+                        </div>
+                        <a href="#" class="btn btn-secondary">See Business</a>
+                    </div>
+                </div>
+
+                <div class="business-card">
+                    <div class="business-header">
+                        <div class="business-logo">🚕</div>
+                        <h3>West End Taxi Co</h3>
+                        <div class="business-category">London Taxi Network</div>
+                    </div>
+                    <div class="business-body">
+                        <p>Premium taxi service specialising in West End and central London, perfect for nights out and business meetings.</p>
+                        <div class="business-contact">
+                            <a href="#">📍 West End, London</a>
+                            <a href="tel:+442071234507">📞 +44 20 7123 4507</a>
+
+                        </div>
+                        <a href="#" class="btn btn-secondary">See Business</a>
+                    </div>
+                </div>
+
+                <div class="business-card">
+                    <div class="business-header">
+                        <div class="business-logo">🚕</div>
+                        <h3>London Executive Cars</h3>
+                        <div class="business-category">London Taxi Network</div>
+                    </div>
+                    <div class="business-body">
+                        <p>Luxury executive taxi service providing premium vehicles and professional drivers for corporate and VIP travel.</p>
+                        <div class="business-contact">
+                            <a href="#">📍 Mayfair, London</a>
+                            <a href="tel:+442071234508">📞 +44 20 7123 4508</a>
+
+                        </div>
+                        <a href="#" class="btn btn-secondary">See Business</a>
+                    </div>
+                </div>
+
+                <div class="business-card">
+                    <div class="business-header">
+                        <div class="business-logo">🚕</div>
+                        <h3>South London Taxis</h3>
+                        <div class="business-category">London Taxi Network</div>
+                    </div>
+                    <div class="business-body">
+                        <p>Trusted taxi service covering South London, including Croydon, Wimbledon, and Sutton.</p>
+                        <div class="business-contact">
+                            <a href="#">📍 South London</a>
+                            <a href="tel:+442071234509">📞 +44 20 7123 4509</a>
+
+                        </div>
+                        <a href="#" class="btn btn-secondary">See Business</a>
+                    </div>
+                </div>
+
+                <div class="business-card hidden-card">
+                    <div class="business-header">
+                        <div class="business-logo">🚕</div>
+                        <h3>East London Cabs</h3>
+                        <div class="business-category">London Taxi Network</div>
+                    </div>
+                    <div class="business-body">
+                        <p>Local taxi service covering East London, including Stratford, Hackney, and Newham.</p>
+                        <div class="business-contact">
+                            <a href="#">📍 East London</a>
+                            <a href="tel:+442071234510">📞 +44 20 7123 4510</a>
+
+                        </div>
+                        <a href="#" class="btn btn-secondary">See Business</a>
+                    </div>
+                </div>
+
+                <div class="business-card hidden-card">
+                    <div class="business-header">
+                        <div class="business-logo">🚕</div>
+                        <h3>North London Taxis</h3>
+                        <div class="business-category">London Taxi Network</div>
+                    </div>
+                    <div class="business-body">
+                        <p>Reliable taxi service covering North London, including Islington, Camden, and Barnet.</p>
+                        <div class="business-contact">
+                            <a href="#">📍 North London</a>
+                            <a href="tel:+442071234511">📞 +44 20 7123 4511</a>
+
+                        </div>
+                        <a href="#" class="btn btn-secondary">See Business</a>
+                    </div>
+                </div>
+
+                <div class="business-card hidden-card">
+                    <div class="business-header">
+                        <div class="business-logo">🚕</div>
+                        <h3>Heathrow Airport Taxis</h3>
+                        <div class="business-category">London Taxi Network</div>
+                    </div>
+                    <div class="business-body">
+                        <p>Specialised taxi service for Heathrow Airport transfers, 24/7 available with meet and greet.</p>
+                        <div class="business-contact">
+                            <a href="#">📍 Heathrow Airport</a>
+                            <a href="tel:+442071234512">📞 +44 20 7123 4512</a>
+
+                        </div>
+                        <a href="#" class="btn btn-secondary">See Business</a>
+                    </div>
+                </div>
+
+                <div class="business-card hidden-card">
+                    <div class="business-header">
+                        <div class="business-logo">🚕</div>
+                        <h3>Gatwick Transfers</h3>
+                        <div class="business-category">London Taxi Network</div>
+                    </div>
+                    <div class="business-body">
+                        <p>Professional Gatwick Airport transfer service with fixed fares and no hidden charges.</p>
+                        <div class="business-contact">
+                            <a href="#">📍 Gatwick Airport</a>
+                            <a href="tel:+442071234513">📞 +44 20 7123 4513</a>
+
+                        </div>
+                        <a href="#" class="btn btn-secondary">See Business</a>
+                    </div>
+                </div>
+
+                <div class="business-card hidden-card">
+                    <div class="business-header">
+                        <div class="business-logo">🚕</div>
+                        <h3>Stansted Airport Cars</h3>
+                        <div class="business-category">London Taxi Network</div>
+                    </div>
+                    <div class="business-body">
+                        <p>Comfortable and reliable taxi service for Stansted Airport transfers.</p>
+                        <div class="business-contact">
+                            <a href="#">📍 Stansted Airport</a>
+                            <a href="tel:+442071234514">📞 +44 20 7123 4514</a>
+
+                        </div>
+                        <a href="#" class="btn btn-secondary">See Business</a>
+                    </div>
+                </div>
+
+                <div class="business-card hidden-card">
+                    <div class="business-header">
+                        <div class="business-logo">🚕</div>
+                        <h3>London Luxury Taxis</h3>
+                        <div class="business-category">London Taxi Network</div>
+                    </div>
+                    <div class="business-body">
+                        <p>High-end luxury taxi service with premium vehicles for special occasions.</p>
+                        <div class="business-contact">
+                            <a href="#">📍 Central London</a>
+                            <a href="tel:+442071234515">📞 +44 20 7123 4515</a>
+
+                        </div>
+                        <a href="#" class="btn btn-secondary">See Business</a>
+                    </div>
+                </div>
+
+                <div class="business-card hidden-card">
+                    <div class="business-header">
+                        <div class="business-logo">🚕</div>
+                        <h3>Wimbledon Taxis</h3>
+                        <div class="business-category">London Taxi Network</div>
+                    </div>
+                    <div class="business-body">
+                        <p>Local taxi service in Wimbledon, perfect for tennis tournaments and daily commutes.</p>
+                        <div class="business-contact">
+                            <a href="#">📍 Wimbledon, London</a>
+                            <a href="tel:+442071234516">📞 +44 20 7123 4516</a>
+
+                        </div>
+                        <a href="#" class="btn btn-secondary">See Business</a>
+                    </div>
+                </div>
+
+                <div class="business-card hidden-card">
+                    <div class="business-header">
+                        <div class="business-logo">🚕</div>
+                        <h3>Chelsea Cabs</h3>
+                        <div class="business-category">London Taxi Network</div>
+                    </div>
+                    <div class="business-body">
+                        <p>Premium taxi service in Chelsea, known for reliability and professional drivers.</p>
+                        <div class="business-contact">
+                            <a href="#">📍 Chelsea, London</a>
+                            <a href="tel:+442071234517">📞 +44 20 7123 4517</a>
+
+                        </div>
+                        <a href="#" class="btn btn-secondary">See Business</a>
+                    </div>
+                </div>
+
+                <div class="business-card hidden-card">
+                    <div class="business-header">
+                        <div class="business-logo">🚕</div>
+                        <h3>Kensington Taxis</h3>
+                        <div class="business-category">London Taxi Network</div>
+                    </div>
+                    <div class="business-body">
+                        <p>Trusted taxi service in Kensington, serving residents and visitors alike.</p>
+                        <div class="business-contact">
+                            <a href="#">📍 Kensington, London</a>
+                            <a href="tel:+442071234518">📞 +44 20 7123 4518</a>
+
+                        </div>
+                        <a href="#" class="btn btn-secondary">See Business</a>
+                    </div>
+                </div>
+
+                <div class="business-card hidden-card">
+                    <div class="business-header">
+                        <div class="business-logo">🚕</div>
+                        <h3>Brixton Taxi Co</h3>
+                        <div class="business-category">London Taxi Network</div>
+                    </div>
+                    <div class="business-body">
+                        <p>Local taxi service in Brixton, South London, with 24/7 availability.</p>
+                        <div class="business-contact">
+                            <a href="#">📍 Brixton, London</a>
+                            <a href="tel:+442071234519">📞 +44 20 7123 4519</a>
+
+                        </div>
+                        <a href="#" class="btn btn-secondary">See Business</a>
+                    </div>
+                </div>
+
+                <div class="business-card hidden-card">
+                    <div class="business-header">
+                        <div class="business-logo">🚕</div>
+                        <h3>Hackney Cabs</h3>
+                        <div class="business-category">London Taxi Network</div>
+                    </div>
+                    <div class="business-body">
+                        <p>Reliable taxi service in Hackney, East London, with competitive fares.</p>
+                        <div class="business-contact">
+                            <a href="#">📍 Hackney, London</a>
+                            <a href="tel:+442071234520">📞 +44 20 7123 4520</a>
+
+                        </div>
+                        <a href="#" class="btn btn-secondary">See Business</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <button id="seeMoreBtn" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem;">See More</button>
+            </div>
+        </div>
+        </section>
+
+    <section class="fleet">
+        <div class="container">
+            <div class="section-header">
+                <h2>Become a <span>Partner</span></h2>
+                <p>Join our business network and grow together</p>
+            </div>
+            <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+                <p style="color: var(--light-gray); margin-bottom: 2rem;">Interested in becoming a partner? Contact us to learn more about our partnership program and benefits.</p>
+                <a href="/contact" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem;">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="/" class="logo" style="text-decoration: none;">
+                        <img src="../images/Logo.jpg" alt="UK Cabs Taxi Service Logo">
+                        <div class="logo-text-container">
+                            <div class="logo-text">UK <span>Cabs</span></div>
+                            <div class="logo-subtext">Taxi Service</div>
+                        </div>
+                    </a>
+                    <p style="margin-top: 1.2rem;">Learn more about our story, our team, and how we became London's trusted taxi service.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Reddit">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <circle cx="8" cy="12" r="1"></circle>
+                                <circle cx="16" cy="12" r="1"></circle>
+                                <path d="M12 20a8 8 0 0 0 8-8"></path>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="/our-story">Our Story</a></li>
+                        <li><a href="/our-team">Our Team</a></li>
+                        <li><a href="/business">Business Network</a></li>
+                        <li><a href="/about">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/services">Services</a></li>
+                        <li><a href="/fleet">Our Fleet</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p>📍 London, United Kingdom</p>
+                    <p>📞 +44 20 3807 8094</p>
+                    <p>✉️ contact@ukcabstaxiservice.co.uk</p>
+                    <p>🕒 24/7 Available</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 UK Cabs Taxi Service. All rights reserved. | <a href="/privacy" style="color: var(--gold);">Privacy Policy</a> | <a href="/terms" style="color: var(--gold);">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+<!-- Floating Menu -->
+<div class="floating-menu">
+    <input type="checkbox" id="floating-toggle">
+    <label for="floating-toggle" class="floating-toggle">
+        <span class="toggle-icon toggle-icon-default">🚕</span>
+        <span class="toggle-icon toggle-icon-active">+</span>
+    </label>
+    <div class="floating-options">
+        <div class="floating-header">
+            <span>Now Start Your Ride</span>
+        </div>
+        <a href="/book" class="floating-option" title="Book Now">
+            <span class="option-icon">🚕</span>
+            <span class="option-text">Book a Ride</span>
+        </a>
+        <a href="mailto:contact@ukcabstaxiservice.co.uk" class="floating-option" title="Email Us">
+            <span class="option-icon">✉️</span>
+            <span class="option-text">contact@ukcabstaxiservice.co.uk</span>
+        </a>
+        <a href="tel:+442071234567" class="floating-option" title="Call Us">
+            <span class="option-icon">📞</span>
+            <span class="option-text">+44 20 3807 8094</span>
+        </a>
+    </div>
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const seeMoreBtn = document.getElementById('seeMoreBtn');
+    const hiddenCards = document.querySelectorAll('.hidden-card');
+    let visibleCount = 0;
+    
+    // Determine initial count based on screen size
+    const isMobile = window.innerWidth <= 768;
+    visibleCount = isMobile ? 5 : 6;
+    
+    seeMoreBtn.addEventListener('click', function() {
+        // Show next 4 cards
+        const cardsToShow = Array.from(hiddenCards).slice(visibleCount - (isMobile ? 5 : 6), visibleCount - (isMobile ? 5 : 6) + 4);
+        cardsToShow.forEach(card => {
+            card.style.display = 'block';
+            card.classList.remove('hidden-card');
+        });
+        
+        visibleCount += cardsToShow.length;
+        
+        // Hide button if all cards are shown
+        if (visibleCount >= hiddenCards.length + (isMobile ? 5 : 6)) {
+            seeMoreBtn.style.display = 'none';
+        }
+    });
+});
+</script>
+<script src="../js/main.js"></script>
