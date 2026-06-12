@@ -1,2 +1,2 @@
 # UkCabsTaxiService
-Coming Soon Display
+Taxi service based in UK
