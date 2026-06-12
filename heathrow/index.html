@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heathrow Airport Transfers - UK Cabs Taxi Service</title>
+    <meta name="description" content="Heathrow Airport taxi transfers. Meet and greet service, fixed prices, all terminals covered.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../images/Logo.jpg">
+    <style>
+        .airport-page {
+            padding: 5rem 0;
+        }
+        .airport-info {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .price-card {
+            background: var(--off-white);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid var(--gold);
+        }
+        .price-card h4 {
+            color: var(--primary-black);
+            margin-bottom: 0.5rem;
+        }
+        .price-card .price {
+            font-size: 2rem;
+            color: var(--gold);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo" style="text-decoration: none;">
+                <img src="../images/Logo.jpg" alt="UK Cabs Taxi Service Logo">
+                <div class="logo-text-container">
+                    <div class="logo-text">UK <span>Cabs</span></div>
+                    <div class="logo-subtext">Taxi Service</div>
+                </div>
+            </a>
+                        <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li class="dropdown">
+                    <a href="/about">About Us ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/our-story">Our Story</a></li>
+                        <li><a href="/business">Business Network</a></li>
+                        <li><a href="/our-team">Our Team</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="/services">Services ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/services">All Services</a></li>
+                        <li><a href="/airports">Airport Transfers</a></li>
+                        <li><a href="/executive-travel">Executive Travel</a></li>
+                        <li><a href="/corporate-accounts">Corporate Accounts</a></li>
+                        <li><a href="/local-taxi">Local Taxi</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="/airports">Airports ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/airports">All Airports</a></li>
+                        <li><a href="/heathrow">Heathrow Airport</a></li>
+                        <li><a href="/gatwick">Gatwick Airport</a></li>
+                        <li><a href="/stansted">Stansted Airport</a></li>
+                        <li><a href="/luton">Luton Airport</a></li>
+                        <li><a href="/londoncity">London City Airport</a></li>
+                    </ul>
+                </li>
+                <li><a href="/fleet">Fleet</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>            <div class="nav-cta">
+                <a href="tel:+442071234567" class="phone-link">📞 +44 20 3807 8094</a>
+                <a href="/book" class="btn btn-primary">Book Now</a>
+            </div>
+            <div class="mobile-nav-actions">
+                <a href="tel:+442071234567" class="mobile-call-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                </a>
+                <button class="mobile-menu-btn">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="6" x2="21" y2="6"/>
+                        <line x1="3" y1="12" x2="21" y2="12"/>
+                        <line x1="3" y1="18" x2="21" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero page-hero" style="min-height: 60vh;">
+        <div class="container" style="text-align: center;">
+            <h1 style="color: white; font-size: 3.5rem; margin-bottom: 1rem;">Heathrow <span style="color: var(--gold);">Airport</span></h1>
+            <p style="color: var(--light-gray); font-size: 1.3rem; line-height: 1.8; max-width: 800px; margin: 0 auto;">
+                Reliable, comfortable transfers to and from Heathrow Airport (LHR) with professional drivers, meet & greet service, and fixed pricing for a stress-free journey to or from all Heathrow terminals and all London destinations!
+            </p>
+        </div>
+    </section>
+
+    <section class="airport-page why-choose">
+        <div class="container">
+            <div class="airport-info">
+                <h2 style="color: var(--primary-black); margin-bottom: 1.5rem; font-size: 2rem;">About <span style="color: var(--gold);">Heathrow</span> Airport</h2>
+                <p style="color: var(--text-gray); margin-bottom: 1.5rem; font-size: 1.1rem;">Heathrow is London's largest and busiest airport, located 15 miles west of Central London. It has 4 passenger terminals (2, 3, 4, 5) and is the UK's hub for international travel.</p>
+                <p style="color: var(--text-gray); font-size: 1.1rem;">Typical transfer times:</p>
+                <ul style="color: var(--text-gray); margin: 1rem 2rem;">
+                    <li>Heathrow to Central London: 30-45 minutes</li>
+                    <li>Heathrow to Canary Wharf: 60-75 minutes</li>
+                    <li>Heathrow to Gatwick: 45-60 minutes</li>
+                </ul>
+            </div>
+
+            <div class="airport-info">
+                <h2 style="color: var(--primary-black); margin-bottom: 1.5rem; font-size: 1.8rem;">Our <span style="color: var(--gold);">Pickup</span> Process</h2>
+                <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                    <div class="feature-card">
+                        <div class="feature-icon">📡</div>
+                        <h3>Flight Monitoring</h3>
+                        <p>We track your flight in real-time</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">👋</div>
+                        <h3>Meet & Greet</h3>
+                        <p>Driver meets you in arrivals with a name board</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⏰</div>
+                        <h3>Free Waiting</h3>
+                        <p>60 minutes free waiting time</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="airport-info">
+                <h2 style="color: var(--primary-black); margin-bottom: 1.5rem; font-size: 1.8rem;">What Our <span style="color: var(--gold);">Customers</span> Say</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">Excellent service! Driver was on time, car was immaculate, and the journey was smooth. Highly recommended for airport transfers.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">JM</div>
+                            <div class="author-info">
+                                <h4>John Mitchell</h4>
+                                <p>Business Traveler</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">We've been using UK Cabs for our corporate travel for 3 years now. Always reliable, professional, and great value for money.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">SK</div>
+                            <div class="author-info">
+                                <h4>Sarah Khan</h4>
+                                <p>Corporate Client</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">Perfect experience from start to finish. The meet and greet service at Heathrow was exceptional. Will definitely book again!</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">EP</div>
+                            <div class="author-info">
+                                <h4>Emma Parker</h4>
+                                <p>Frequent Traveler</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container" style="text-align: center;">
+            <h2 style="color: white; font-size: 2.5rem; margin-bottom: 1rem;">Book Your Heathrow Transfer</h2>
+            <p style="color: var(--light-gray); font-size: 1.2rem; margin-bottom: 2rem;">Get a fixed price quote now</p>
+            <a href="/book" class="btn btn-primary" style="font-size: 1.2rem; padding: 1rem 3rem;">Book Now</a>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="/" class="logo" style="text-decoration: none;">
+                        <img src="../images/Logo.jpg" alt="UK Cabs Taxi Service Logo">
+                        <div class="logo-text-container">
+                            <div class="logo-text">UK <span>Cabs</span></div>
+                            <div class="logo-subtext">Taxi Service</div>
+                        </div>
+                    </a>
+                    <p style="margin-top: 1.2rem;">Fast, reliable airport transfers to and from all London airports. Meet & greet service included.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Reddit">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <circle cx="8" cy="12" r="1"></circle>
+                                <circle cx="16" cy="12" r="1"></circle>
+                                <path d="M12 20a8 8 0 0 0 8-8"></path>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>All Airports</h4>
+                    <ul>
+                        <li><a href="/heathrow">Heathrow Airport</a></li>
+                        <li><a href="/gatwick">Gatwick Airport</a></li>
+                        <li><a href="/stansted">Stansted Airport</a></li>
+                        <li><a href="/luton">Luton Airport</a></li>
+                        <li><a href="/londoncity">London City Airport</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/book">Book Now</a></li>
+                        <li><a href="/fleet">Our Fleet</a></li>
+                        <li><a href="/services">Services</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>24/7 Support</h4>
+                    <p>📍 London, United Kingdom</p>
+                    <p>📞 +44 20 3807 8094</p>
+                    <p>✉️ bookings@ukcabstaxiservice.co.uk</p>
+                    <p>🕒 Always Available</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 UK Cabs Taxi Service. All rights reserved. | <a href="/privacy" style="color: var(--gold);">Privacy Policy</a> | <a href="/terms" style="color: var(--gold);">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+<!-- Floating Menu -->
+<div class="floating-menu">
+    <input type="checkbox" id="floating-toggle">
+    <label for="floating-toggle" class="floating-toggle">
+        <span class="toggle-icon toggle-icon-default">🚕</span>
+        <span class="toggle-icon toggle-icon-active">+</span>
+    </label>
+    <div class="floating-options">
+        <div class="floating-header">
+            <span>Now Start Your Ride</span>
+        </div>
+        <a href="/book" class="floating-option" title="Book Now">
+            <span class="option-icon">🚕</span>
+            <span class="option-text">Book a Ride</span>
+        </a>
+        <a href="mailto:contact@ukcabstaxiservice.co.uk" class="floating-option" title="Email Us">
+            <span class="option-icon">✉️</span>
+            <span class="option-text">contact@ukcabstaxiservice.co.uk</span>
+        </a>
+        <a href="tel:+442071234567" class="floating-option" title="Call Us">
+            <span class="option-icon">📞</span>
+            <span class="option-text">+44 20 3807 8094</span>
+        </a>
+    </div>
+</div>
+
+
+<script src="../js/main.js"></script>
